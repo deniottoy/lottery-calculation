@@ -1,0 +1,14 @@
+/* Only the first illustration: a small continuous drift within its existing frame. */
+.js #balls.first-art-motion img{
+ scale:1.025;
+ animation:first-art-drift 24s ease-in-out infinite alternate!important;
+ animation-play-state:paused!important;
+}
+.js #balls.first-art-motion.art-playing img{animation-play-state:running!important}
+@keyframes first-art-drift{
+ from{translate:-.35% .15%}
+ to{translate:.35% -.15%}
+}
+@media(prefers-reduced-motion:reduce){
+ .js #balls.first-art-motion img{animation:none!important;scale:1;translate:none}
+}

@@ -1,0 +1,40 @@
+/* Scoped to the optional starter exercise. */
+#build-experiment{background:#262626;color:#fff;font-family:'Case JetBrains Mono',monospace}
+#build-experiment .kicker{color:#bca4ff}
+#build-experiment h2{max-width:1100px}
+#build-experiment .experiment-intro{color:#c7ccdb;margin-top:40px;max-width:1111px}
+#build-experiment .starter-panel{margin-top:48px;border:1px solid #383b4d;border-radius:16px;overflow:hidden;background:#10131e}
+#build-experiment .starter-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 24px;border-bottom:1px solid #383b4d;color:#bca4ff;font-size:12px;line-height:1.5}
+#build-experiment button{flex-shrink:0;padding:10px 18px;border:1px solid #bca4ff;border-radius:6px;background:transparent;color:#fff;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
+#build-experiment button:hover{background:#6b2eeb;border-color:#6b2eeb}
+#build-experiment pre{margin:0;padding:28px;overflow-x:auto;max-width:100%;font-size:14px;line-height:1.75;tab-size:4;color:#e5e9f1}
+#build-experiment code{font:inherit;white-space:pre}
+#build-experiment .starter-copy-status{min-height:24px;margin-top:12px;color:#bca4ff;font-size:13px;line-height:24px}
+#build-experiment .starter-prompt{margin-top:32px;max-width:1111px}
+#build-experiment .starter-prompt h3{margin:0 0 20px;font-size:18px;line-height:1.4;color:#e5dbff}
+#build-experiment blockquote{margin:0;padding-left:24px;border-left:2px solid #6b2eeb;font-size:18px;line-height:1.6;color:#e5e9f1}
+#build-experiment .starter-context{margin-top:40px;max-width:1111px;font-size:16px;line-height:1.6;color:#c7ccdb}
+@media(min-width:1440px){#build-experiment pre{font-size:16px}}
+@media(max-width:767px){#build-experiment .starter-toolbar{padding:14px;gap:10px;font-size:10px}#build-experiment button{padding:9px 12px;font-size:12px}#build-experiment pre{padding:20px;font-size:13px}#build-experiment blockquote{font-size:16px}#build-experiment .starter-context{font-size:14px}}
+
+#build-experiment .starter-code-details summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 24px;list-style:none;font-size:14px;line-height:1.5;color:#e5dbff;cursor:pointer}
+#build-experiment .starter-code-details summary::-webkit-details-marker{display:none}
+#build-experiment .starter-code-details summary::after{content:'+';font-size:22px;line-height:1}
+#build-experiment .starter-code-details[open] summary::after{content:'−'}
+#build-experiment .starter-code-details[open] summary{border-bottom:1px solid #383b4d}
+@media(max-width:767px){#build-experiment .starter-code-details summary{padding:14px}}
+
+/* Match slide 5's light palette; preserve the dark code panel. */
+#build-experiment{background:#f8fafc;color:#090b12}
+#build-experiment .kicker{color:#6b2eeb}
+#build-experiment .experiment-intro,
+#build-experiment .starter-context{color:#57637d}
+#build-experiment .starter-prompt h3{color:#090b12}
+#build-experiment blockquote{color:#57637d}
+#build-experiment .starter-copy-status{color:#6b2eeb}
+
+/* Use the case-wide scaled spacing for the exercise's main content gaps. */
+#build-experiment .starter-panel{margin-top:var(--case-gap)}
+#build-experiment .starter-prompt{margin-top:var(--case-gap)}
+#build-experiment .starter-context{margin-top:var(--case-gap)}
+#build-experiment .starter-copy-status:empty{min-height:0;height:0;margin:0}

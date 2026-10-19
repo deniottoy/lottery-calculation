@@ -1,0 +1,18 @@
+(()=>{
+'use strict';const title=document.getElementById('hero-title'),section=document.getElementById('hero');if(!title||!section)return;
+const lines=['WHAT IF','PROBABILITY','FELT PHYSICAL?'];const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const statistic=section.querySelector('.stat'),caption=section.querySelector('.caption');let counterFrame=0;const rail=section.querySelector('.rail'),subtitle=section.querySelector('.hero-grid>.body'),footer=section.querySelector('.hero-footer');
+title.setAttribute('aria-label',lines.join(' '));title.classList.add('typewriter');section.classList.add('hero-sequenced');
+const outputs=[...title.children].map((line,i)=>{line.className='type-line';line.removeAttribute('style');line.setAttribute('aria-hidden','true');line.textContent=lines[i];const text=document.createElement('span');text.className='typed-content';line.append(text);return text});
+let timers=[],playing=false,railTarget=null,lastEntered=false;
+function later(fn,delay){timers.push(setTimeout(fn,delay))}
+function growTo(element){railTarget=element;const parent=section.getBoundingClientRect(),r=rail.getBoundingClientRect(),target=element.getBoundingClientRect();const limit=section.clientHeight-parseFloat(getComputedStyle(rail).top)-40;rail.style.height=`${Math.max(parseFloat(rail.style.height)||0,Math.max(0,Math.min(limit,target.bottom-r.top)))}px`}
+function reset(){cancelAnimationFrame(counterFrame);statistic.textContent='13,983,816';timers.forEach(clearTimeout);timers=[];playing=false;railTarget=null;section.classList.remove('hero-subtitle-ready','hero-signals-ready','hero-data-ready','hero-footer-ready','hero-caption-ready','hero-interface-ready');rail.style.height='0px';outputs.forEach(e=>{e.textContent='';e.classList.remove('typing-active')})}
+function revealFooter(){section.classList.add('hero-footer-ready');growTo(footer)}
+function runCounter(){section.classList.add('hero-data-ready');statistic.textContent='0';growTo(statistic);let began;function count(now){began??=now;const t=Math.min((now-began)/700,1);statistic.textContent=Math.round(13983816*t).toLocaleString('en-US');if(t<1){counterFrame=requestAnimationFrame(count)}else{statistic.textContent='13,983,816';section.classList.add('hero-caption-ready');growTo(caption);later(revealFooter,800)}}counterFrame=requestAnimationFrame(count)}
+function afterTitle(){section.classList.add('hero-subtitle-ready');growTo(subtitle);later(runCounter,850)}
+function start(){reset();playing=true;if(reduced){outputs.forEach((e,i)=>e.textContent=lines[i]);section.classList.add('hero-subtitle-ready','hero-signals-ready','hero-data-ready','hero-footer-ready','hero-caption-ready','hero-interface-ready');growTo(footer);return}outputs[0].classList.add('typing-active');later(()=>{outputs[0].textContent='{';growTo(outputs[0]);later(()=>{outputs[0].textContent='';later(()=>{let line=0,index=0;function type(){if(index===0)growTo(outputs[line]);outputs[line].textContent=lines[line].slice(0,++index);if(index===lines[line].length){if(line===lines.length-1){afterTitle();return}outputs[line].classList.remove('typing-active');line++;index=0;outputs[line].classList.add('typing-active')}later(type,85)}type()},500)},500)},500)}
+function sync(){const entered=section.classList.contains('entered');if(entered===lastEntered)return;lastEntered=entered;if(entered){if(!playing)start()}else reset()}
+new MutationObserver(sync).observe(section,{attributes:true,attributeFilter:['class']});sync();
+window.addEventListener('resize',()=>{if(railTarget)growTo(railTarget)},{passive:true});if(document.fonts)document.fonts.ready.then(()=>{if(railTarget)growTo(railTarget)});
+})();

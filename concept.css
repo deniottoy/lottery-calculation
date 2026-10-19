@@ -1,0 +1,182 @@
+/* Concept variant. Original v068 remains in animation-preview/. */
+#balls,#code{position:relative;overflow:hidden;padding:0!important;min-height:0;height:auto;background:none}
+#balls img,#code img,.js #code.entered img{display:block;position:static;width:100%;height:auto;max-width:none;animation:none!important;transform:none!important;filter:none;will-change:auto}
+#question .main-screen{display:block;height:auto;object-fit:contain;margin-left:auto;margin-right:auto}
+#interface{display:block}
+#interface .comparison-heading{width:100%;margin-bottom:50px}
+#interface .body{color:#57637d;margin-top:32px}
+#interface .feature-image{display:block;height:auto;object-fit:contain}
+#iteration{padding-bottom:80px}
+#iteration .iteration-grid>img{height:auto;align-self:start;object-fit:contain}
+.ai-workflow{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x proximity}
+.ai-workflow>div{flex:1 0 300px;min-width:300px;min-height:260px;border:1px solid #383b4d;background:#171a26;scroll-snap-align:start}
+.ai-workflow>div:last-child{background:#6b2eeb}
+.make-credit{display:flex;align-items:center;gap:16px;margin-top:40px;font-size:16px;font-weight:700}
+.make-credit img{flex:none;width:32px;height:32px}
+#experiment .kicker{color:#e5dbff}
+#closing .note{background:white;color:#090b12}
+#closing .note h3{color:#6b2eeb}
+#closing .note p{color:#090b12}
+@media(min-width:768px){
+ #question h2{max-width:calc(874 * var(--u))}
+ #question .main-screen{width:calc(900 * var(--u));margin-top:calc(280 * var(--u));margin-bottom:calc(80 * var(--u));border-radius:calc(24 * var(--u))}
+ #logic h2{max-width:calc(879 * var(--u))}
+ main #interface{padding:calc(80 * var(--u)) calc(120 * var(--u));background:#fafafa}
+ #interface .comparison-heading{margin-bottom:calc(80 * var(--u))}
+ #interface .body{margin-top:calc(52 * var(--u))}
+ #interface .feature-image{width:calc(1172 * var(--u));max-width:100%;margin:0 auto}
+ #metrics .body{max-width:calc(880 * var(--u))}
+ #iteration{padding-bottom:calc(80 * var(--u))}
+ #iteration .iteration-grid{grid-template-columns:calc(832 * var(--u)) minmax(0,1fr);align-items:stretch}
+ #iteration .workflow{gap:calc(32 * var(--u))}
+ #iteration .workflow>div{flex:1;min-height:calc(360 * var(--u))}
+ #experiment .outcome{font-size:calc(19 * var(--u))}
+ .ai-workflow{gap:calc(24 * var(--u))}
+ .ai-workflow>div{flex:1 0 0;min-width:0;min-height:calc(260 * var(--u));border-radius:calc(24 * var(--u))}
+ .make-credit{font-size:calc(19 * var(--u));margin-top:calc(40 * var(--u));gap:calc(16 * var(--u))}
+ .make-credit img{width:calc(32 * var(--u));height:calc(32 * var(--u))}
+}
+@media(min-width:768px) and (max-width:1439px){
+ #question .main-screen{width:min(100%,900px)}
+ #iteration .iteration-grid{display:flex;flex-direction:column}
+ #iteration .iteration-grid .workflow{order:0}
+ .ai-workflow{margin-left:calc(-120 * var(--u));margin-right:calc(-120 * var(--u));padding:0 calc(120 * var(--u));scroll-padding-inline:calc(120 * var(--u))}
+ .ai-workflow>div{flex:0 0 300px;min-width:300px;min-height:260px}
+}
+@media(max-width:767px){
+ #question .main-screen{width:100%;margin:72px auto 48px}
+ #interface .feature-image{width:100%;max-width:100%}
+ .make-credit{font-size:12px;line-height:1.6}
+ .ai-workflow{margin-inline:-7vw;padding-inline:7vw;scroll-padding-inline:7vw}
+ #closing .note{min-width:280px}
+}
+
+/* Illustration inserts remain still before, during and after entry. */
+.js #balls img,.js #code img{opacity:1!important;transition:none!important;animation:none!important;transform:none!important}
+
+/* Cover without the duplicate simulator; retain title and data sequence. */
+@media(min-width:1440px){main .hero{height:calc(920 * var(--u))}.hero .hero-footer{top:calc(820 * var(--u))}}
+@media(min-width:768px) and (max-width:1439px){main .hero{height:calc(1020 * var(--u))}.hero .hero-footer{top:calc(920 * var(--u))}}
+
+/* Annotated desktop/tablet spacing: simulator 140px, process cards 200px. */
+@media(min-width:768px){
+ #question .main-screen{margin-top:140px}
+ #logic .cards{margin-top:200px}
+}
+
+/* Slide 6: slightly deeper cool background from the existing palette. */
+main #interface{background:#e8edf5}
+
+/* Workflow descriptions share slide 2 card typography. Equal fixed card heights. */
+#iteration .workflow>div,#experiment .ai-workflow>div{box-sizing:border-box;height:260px;min-height:260px;max-height:260px;overflow:hidden;flex-shrink:0}
+.workflow .workflow-description{font-family:inherit;font-weight:400;font-size:12px;line-height:1.6;color:#c3cadd;margin-top:16px}
+#experiment .ai-workflow strong{margin-top:40px}
+@media(min-width:768px){
+ .workflow .workflow-description{font-size:calc(18 * var(--u));line-height:calc(24 * var(--u));margin-top:calc(16 * var(--u))}
+ #iteration .workflow>div{height:calc(360 * var(--u));min-height:calc(360 * var(--u));max-height:calc(360 * var(--u))}
+ #experiment .ai-workflow>div{height:calc(260 * var(--u));min-height:calc(260 * var(--u));max-height:calc(260 * var(--u))}
+ #experiment .ai-workflow strong{margin-top:calc(48 * var(--u))}
+}
+@media(min-width:768px) and (max-width:1439px){
+ #iteration .workflow>div,#experiment .ai-workflow>div{height:260px;min-height:260px;max-height:260px;flex:0 0 300px}
+}
+
+/* Closing statement fits its existing column without changing surrounding layout. */
+#closing .closing-grid>div .stat{font-size:clamp(30px,4vw,60px);overflow-wrap:normal}
+@media(min-width:768px){#closing .closing-grid>div .stat{font-size:calc(54 * var(--u));line-height:1.1}}
+
+/* Tool signature moved to the existing cover footer. */
+#hero .hero-footer .make-credit{margin:0;font-size:16px;line-height:1.5;color:#090b12;gap:16px}
+#hero .hero-footer .make-credit img{width:32px;height:32px}
+
+/* Static cards; connections describe the process instead of animated emphasis. */
+#logic .card,#logic .card.active,#question .note,#closing .note,.js .entered .workflow>div{animation:none!important;transition:none!important;transform:none!important;opacity:1!important;box-shadow:none!important}
+#logic .card,#logic .card.active{background:#fff;color:#090b12;border-color:#d1d6e5}
+#logic .card.active p{color:#57637d}
+#logic .card .no{color:#bca4ff}
+#iteration .workflow>div,#experiment .workflow>div{background:#171a26}
+#iteration .workflow>div:last-child,#experiment .workflow>div:last-child{background:#6b2eeb}
+#logic .cards,.ai-workflow,#iteration .workflow{position:relative;align-items:stretch}
+#logic .card,.ai-workflow>div,#iteration .workflow>div{position:relative;overflow:visible}
+#logic .card:not(:last-child)::after,.ai-workflow>div:not(:last-child)::after{content:'→';position:absolute;left:100%;top:50%;width:24px;border-top:1px solid #a89ac4;text-align:right;font-size:16px;line-height:0;color:#9383b0;pointer-events:none}
+#logic .card:not(:last-child)::after{width:24px}
+.ai-workflow{padding-bottom:40px}
+.ai-workflow::after{content:'←';position:absolute;left:32px;right:32px;bottom:8px;height:24px;border:1px solid #9383b0;border-top:0;border-radius:0 0 12px 12px;color:#bca4ff;font-size:16px;line-height:46px;text-align:center;pointer-events:none}
+@media(min-width:1440px){
+ #logic .card:not(:last-child)::after{width:calc(54 * var(--u))}
+ .ai-workflow>div:not(:last-child)::after{width:calc(24 * var(--u))}
+ #iteration .workflow>div:not(:last-child)::after{content:'↓';position:absolute;top:100%;left:50%;height:calc(32 * var(--u));border-left:1px solid #9383b0;color:#bca4ff;line-height:calc(32 * var(--u));font-size:16px;pointer-events:none}
+}
+@media(max-width:1439px){
+ #iteration .workflow>div:not(:last-child)::after{content:'→';position:absolute;left:100%;top:50%;width:24px;border-top:1px solid #9383b0;color:#bca4ff;line-height:0;text-align:right;font-size:16px;pointer-events:none}
+ .ai-workflow::after{display:none}
+ .ai-workflow>div:last-child::after{content:'↶ PROMPT';position:absolute;right:0;top:calc(100% + 12px);width:calc(4 * 300px + 3 * 24px);height:20px;border-bottom:1px solid #9383b0;color:#bca4ff;font-size:12px;text-align:left;pointer-events:none}
+}
+
+/* Reduced card use: a compact process and a single closing takeaway. */
+#iteration .iteration-grid{display:flex;justify-content:center;align-items:flex-start}
+#iteration .iteration-grid>img{width:100%;max-width:832px;margin-inline:auto}
+.ai-process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;list-style:none;padding:0;margin:80px 0 0}
+.ai-process li{position:relative;border-top:1px solid #9383b0;padding-top:20px}
+.ai-process .process-no{display:block;font-size:12px;color:#bca4ff;margin-bottom:16px}
+.ai-process strong{font-size:20px;font-weight:700;color:white}
+.ai-process p{font-size:14px;line-height:1.6;color:#c3cadd;margin-top:16px}
+.ai-process li:not(:last-child)::after{content:'→';position:absolute;right:-24px;top:-12px;color:#bca4ff}
+.closing-takeaway{font-size:20px;line-height:1.5;color:white;border-top:1px solid #ffffff66;padding-top:28px;margin-top:80px;max-width:950px}
+@media(min-width:768px){
+ #iteration .iteration-grid>img{max-width:calc(832 * var(--u))}
+ .ai-process{margin-top:calc(80 * var(--u));gap:calc(32 * var(--u))}
+ .ai-process strong{font-size:calc(24 * var(--u))}
+ .ai-process p{font-size:calc(18 * var(--u));line-height:calc(24 * var(--u))}
+ .closing-takeaway{font-size:calc(24 * var(--u));line-height:calc(36 * var(--u));max-width:calc(1111 * var(--u));margin-top:calc(80 * var(--u))}
+}
+@media(max-width:767px){.ai-process{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px}.ai-process li::after{display:none}.closing-takeaway{font-size:18px}}
+
+/* Animate only the compact AI process once it enters the viewport. */
+.ai-process.process-motion li{border-top-color:transparent}
+.ai-process.process-motion li::before{content:'';position:absolute;top:-1px;left:0;width:100%;height:1px;background:#9383b0;transform:scaleX(0);transform-origin:left}
+.ai-process.process-motion li>*{opacity:0;transform:translateY(10px)}
+.ai-process.process-motion li::after{opacity:0}
+.ai-process.process-motion li:nth-child(1){--stage-delay:0s}
+.ai-process.process-motion li:nth-child(2){--stage-delay:.45s}
+.ai-process.process-motion li:nth-child(3){--stage-delay:.9s}
+.ai-process.process-motion li:nth-child(4){--stage-delay:1.35s}
+.ai-process.process-visible li::before{animation:process-line .8s cubic-bezier(.22,.61,.36,1) var(--stage-delay) both}
+.ai-process.process-visible li>*{animation:process-copy .9s cubic-bezier(.22,.61,.36,1) calc(var(--stage-delay) + .15s) both}
+.ai-process.process-visible li::after{animation:process-arrow .6s ease calc(var(--stage-delay) + .55s) both}
+@keyframes process-line{to{transform:scaleX(1)}}
+@keyframes process-copy{to{opacity:1;transform:translateY(0)}}
+@keyframes process-arrow{to{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+ .ai-process.process-motion li{border-top-color:#9383b0}
+ .ai-process.process-motion li::before{transform:none;animation:none}
+ .ai-process.process-motion li>*,.ai-process.process-motion li::after{opacity:1;transform:none;animation:none}
+}
+
+/* Exact gap from the process explanation to the following illustration. */
+main #logic{height:auto;min-height:0;padding-bottom:200px}
+
+/* Expand the desktop composition proportionally up to 1920px. */
+main{max-width:1920px}
+@media(min-width:1600px){main{--u:min(.0625vw,1.2px)}}
+
+/* Unified spacing: 100px at the 1600px design base, proportional by breakpoint. */
+main{--case-gap:100px}
+main>section:not(.art):not(#hero){padding-bottom:var(--case-gap)}
+main #question .main-screen{margin-top:var(--case-gap);margin-bottom:var(--case-gap)}
+main #logic{padding-bottom:var(--case-gap)}
+main #metrics .metric-grid{margin-top:var(--case-gap)}
+main #interface .comparison-heading{margin-bottom:var(--case-gap)}
+main #iteration .iteration-grid{margin-top:var(--case-gap)}
+main #experiment .ai-process{margin-top:var(--case-gap)}
+main #closing .closing-takeaway{margin-top:var(--case-gap)}
+@media(min-width:768px){
+ main{--case-gap:calc(100 * var(--u))}
+ main .hero{height:calc(952 * var(--u))}
+ main #hero .hero-footer{top:calc(852 * var(--u) - 32px)}
+}
+@media(min-width:768px) and (max-width:1439px){
+ main .hero{height:calc(1052 * var(--u))}
+ main #hero .hero-footer{top:calc(952 * var(--u) - 32px)}
+}
+@media(max-width:767px){main #hero{padding-bottom:var(--case-gap)}}
