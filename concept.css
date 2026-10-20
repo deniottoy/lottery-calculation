@@ -180,3 +180,11 @@ main #closing .closing-takeaway{margin-top:var(--case-gap)}
  main #hero .hero-footer{top:calc(952 * var(--u) - 32px)}
 }
 @media(max-width:767px){main #hero{padding-bottom:var(--case-gap)}}
+
+/* Slide 2: text and principles follow directly, without the interface screenshot. */
+main #question .three-notes{margin-top:var(--case-gap)}
+
+/* Slide 3: responsive video, with the same spacing as the case illustrations. */
+#logic .demo-video-frame{width:100%;max-width:900px;margin:var(--case-gap) auto 0;border-radius:24px;overflow:hidden;background:#f5f6f8;isolation:isolate}
+#logic .demo-video-frame video{display:block;width:100%;height:auto;aspect-ratio:1200 / 1352;object-fit:contain}
+@media(min-width:768px){#logic .demo-video-frame{max-width:calc(900 * var(--u));border-radius:calc(24 * var(--u))}}
